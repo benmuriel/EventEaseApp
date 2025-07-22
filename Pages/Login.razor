@@ -1,0 +1,39 @@
+@page "/login"
+@using Models
+@inject Services.UserService UserService
+@inject NavigationManager Navigation
+
+<h3>Login</h3>
+
+<EditForm Model="LoginModel" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <label>Username:</label>
+    <InputText @bind-Value="LoginModel.Username" />
+    <ValidationMessage For="@(() => LoginModel.Username)" />
+
+    <label>Password:</label>
+    <InputText @bind-Value="LoginModel.Password" type="password" />
+    <ValidationMessage For="@(() => LoginModel.Password)" />
+
+    <button type="submit">Login</button>
+</EditForm>
+
+@if (LoginFailed)
+{
+    <p style="color:red;">Invalid username or password. Try again.</p>
+}
+
+@code {
+    private User LoginModel = new();
+    private bool LoginFailed = false;
+
+    private void HandleLogin()
+    {
+        LoginFailed = !UserService.Login(LoginModel.Username, LoginModel.Password);
+
+        if (!LoginFailed)
+            Navigation.NavigateTo("/events");
+    }
+}

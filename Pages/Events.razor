@@ -1,0 +1,63 @@
+@page "/events"
+@using Models
+@inject Services.EventService EventService
+
+<h3>Events</h3>
+
+<ul>
+    @foreach (var ev in EventService.Events)
+    {
+        <li>
+            <a @onclick="@(() => SelectedEvent = ev)"> @ev.Name (@ev.Date.ToShortDateString()) - @ev.Location</a>
+        </li>
+    }
+</ul>
+
+<h3>Add New Event</h3>
+<EditForm Model="NewEvent" OnValidSubmit="AddEvent">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Name:</label>
+        <InputText @bind-Value="NewEvent.Name" />
+        <ValidationMessage For="@(() => NewEvent.Name)" />
+    </div>
+
+    <div>
+        <label>Date:</label>
+        <InputDate @bind-Value="NewEvent.Date" />
+        <ValidationMessage For="@(() => NewEvent.Date)" />
+    </div>
+
+    <div>
+        <label>Location:</label>
+        <InputText @bind-Value="NewEvent.Location" />
+        <ValidationMessage For="@(() => NewEvent.Location)" />
+    </div>
+    <button @onclick="AddEvent">Add</button>
+</EditForm>
+
+@if (SelectedEvent != null)
+{
+    <EventDetails SelectedEvent="SelectedEvent" />
+}
+
+
+
+@code {
+    private Event NewEvent = new();
+    private Event? SelectedEvent;
+
+    private void AddEvent()
+    {
+        EventService.AddEvent(new Event
+        {
+            Name = NewEvent.Name,
+            Date = NewEvent.Date,
+            Location = NewEvent.Location
+        });
+
+        NewEvent = new(); // Clear form after submission
+    }
+}

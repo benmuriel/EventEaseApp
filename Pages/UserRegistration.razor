@@ -1,0 +1,43 @@
+@page "/register"
+@using Models
+@inject Services.UserService UserService
+@inject NavigationManager Navigation
+
+<h3>Register</h3>
+
+<EditForm Model="NewUser" OnValidSubmit="HandleRegistration">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <label>Username:</label>
+    <InputText @bind-Value="NewUser.Username" />
+    <ValidationMessage For="@(() => NewUser.Username)" />
+
+    <label>Email:</label>
+    <InputText @bind-Value="NewUser.Email" />
+    <ValidationMessage For="@(() => NewUser.Email)" />
+
+    <label>Password:</label>
+    <InputText @bind-Value="NewUser.Password" type="password" />
+    <ValidationMessage For="@(() => NewUser.Password)" />
+
+    <button type="submit">Register</button>
+</EditForm>
+
+@if (RegistrationFailed)
+{
+    <p style="color:red;">Username already taken.</p>
+}
+
+@code {
+    private User NewUser = new();
+    private bool RegistrationFailed = false;
+
+    private void HandleRegistration()
+    {
+        RegistrationFailed = !UserService.RegisterUser(NewUser);
+
+        if (!RegistrationFailed)
+            Navigation.NavigateTo("/events"); // Redirect after success
+    }
+}

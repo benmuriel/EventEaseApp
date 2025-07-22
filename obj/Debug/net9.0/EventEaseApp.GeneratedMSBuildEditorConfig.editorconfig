@@ -32,8 +32,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mupunga/DevProject/C\#/Learning/coursera/Blazor/EventEaseApp/Pages/EventDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnREZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mupunga/DevProject/C\#/Learning/coursera/Blazor/EventEaseApp/Pages/Events.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mupunga/DevProject/C\#/Learning/coursera/Blazor/EventEaseApp/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mupunga/DevProject/C\#/Learning/coursera/Blazor/EventEaseApp/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mupunga/DevProject/C\#/Learning/coursera/Blazor/EventEaseApp/Pages/UserRegistration.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlclJlZ2lzdHJhdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mupunga/DevProject/C\#/Learning/coursera/Blazor/EventEaseApp/Pages/Weather.razor]

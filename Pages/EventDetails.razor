@@ -1,0 +1,19 @@
+@using Models
+@inject Services.EventService EventService
+
+<h3>Event Details</h3>
+
+@if (SelectedEvent != null)
+{
+    <p><strong>Name:</strong> @SelectedEvent.Name</p>
+    <p><strong>Date:</strong> @SelectedEvent.Date.ToShortDateString()</p>
+    <p><strong>Location:</strong> @SelectedEvent.Location</p>
+}
+else
+{
+    <p>No event selected.</p>
+}
+
+@code {
+    [Parameter] public Event SelectedEvent { get; set; }
+}
