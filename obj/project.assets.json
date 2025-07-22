@@ -1762,11 +1762,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mupunga/DevProject/QTRV/C#/Learning/coursera/Blazor/MyBlazorAppWasm/EventEaseApp/EventEaseApp.csproj",
+      "projectUniqueName": "/Users/mupunga/DevProject/C#/Learning/coursera/Blazor/EventEaseApp/EventEaseApp.csproj",
       "projectName": "EventEaseApp",
-      "projectPath": "/Users/mupunga/DevProject/QTRV/C#/Learning/coursera/Blazor/MyBlazorAppWasm/EventEaseApp/EventEaseApp.csproj",
+      "projectPath": "/Users/mupunga/DevProject/C#/Learning/coursera/Blazor/EventEaseApp/EventEaseApp.csproj",
       "packagesPath": "/Users/mupunga/.nuget/packages/",
-      "outputPath": "/Users/mupunga/DevProject/QTRV/C#/Learning/coursera/Blazor/MyBlazorAppWasm/EventEaseApp/obj/",
+      "outputPath": "/Users/mupunga/DevProject/C#/Learning/coursera/Blazor/EventEaseApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/mupunga/.nuget/NuGet/NuGet.Config"
